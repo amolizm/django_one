@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("japanese/", include("japanese.urls")),
+    # path("", include("japanese.urls")),
+    path('tools/japanese/', include("japanese.urls")),
     path('admin/', admin.site.urls),
 ]
