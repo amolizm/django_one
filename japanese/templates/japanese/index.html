@@ -1,5 +1,6 @@
 {% if kana_letter %}
-    <p>Letter: {{ kana_letter.unicode }}</p>
+    <p>Letter: </p>
+    <h1> {{ kana_letter.kanaletter }} </h1>
     <p>Pronunciation: {{ kana_letter.pronounce }}</p>
 
     <form method="post" action="{% url 'index' %}">
