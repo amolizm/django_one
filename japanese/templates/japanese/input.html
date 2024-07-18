@@ -1,0 +1,21 @@
+{% if unicode %}
+
+    {% if submit %}
+        <p>  Update Successfull </p>
+    {% end if %}
+
+    <form method="post" action="{% url 'input' %}">
+        <label for="unicode">Unicode:</label>
+        <input type="text" id="unicode" name="unicode"><br><br>
+        <label for="pronounce">Pronounce:</label>
+        <input type="text" id="pronounce" name="pronounce"><br><br>
+
+        <input type="hidden" name="button_clicked" value="true">
+        <button type="submit">Save the kana</button>
+    </form>
+
+  
+
+{% else %}
+    <p>No Data was returned from index.</p>
+{% endif %}

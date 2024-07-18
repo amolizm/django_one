@@ -11,7 +11,7 @@ class Hiragana(models.Model):
     pronounce = models.CharField(max_length=6)
 
     def __str__(self):
-        self.hiragana_text = "Hiragana Class"
+        self.hiragana_text = "Hiragana {}".format(self.pronounce)
         return self.hiragana_text
 
 class Katakana(models.Model):
@@ -19,7 +19,7 @@ class Katakana(models.Model):
     pronounce = models.CharField(max_length=6)
 
     def __str__(self):
-        self.katakana_text = "Katakana Class"
+        self.katakana_text = "Katakana {}".format(self.pronounce)
         return self.katakana_text
 
 class Kanji(models.Model):
@@ -27,5 +27,5 @@ class Kanji(models.Model):
     pronounce = models.CharField(max_length=16)
 
     def __str__(self):
-            self.kanji_text = "Kanji Class"
+            self.kanji_text = "Kanji {}".format(self.pronounce)
             return self.kanji_text
