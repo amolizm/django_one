@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Katakana, Hiragana
 from .forms import ButtonClickForm
@@ -24,28 +24,31 @@ def get_hiragana():
     return {"kana_letter": kana}
 
 
-def index(response):
-    return HttpResponse("Please Select the Kana")
+def index(request):
+    return render(request, "japanese/index.html")
 
 def hiragana_index(request):
     context = get_hiragana()
     if request.method == 'POST':
         form = ButtonClickForm(request.POST)
         if form.is_valid() and form.cleaned_data['button_clicked']:
-            return render(request, "japanese/index.html", context)
+            return render(request, "japanese/kana.html", context)
     else:
         form = ButtonClickForm()
-    return render(request, "japanese/index.html", context)
+    return render(request, "japanese/kana.html", context)
 
 def katakana_index(request):
     context = get_katakana()
+    print("Request", request)
     if request.method == 'POST':
         form = ButtonClickForm(request.POST)
+        print(form)
         if form.is_valid() and form.cleaned_data['button_clicked']:
-            return render(request, "japanese/index.html", context)
+            print("this is success !")
+            return render(request, "japanese/kana.html", context)
     else:
         form = ButtonClickForm()
-    return render(request, "japanese/index.html", context)
+    return render(request, "japanese/kana.html", context)
 
 def next_character(request):
     return HttpResponse("Button clicked!")

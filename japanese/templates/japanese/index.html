@@ -1,14 +1,5 @@
-{% if kana_letter %}
-    <p>Letter: </p>
-    <h1> {{ kana_letter.kanaletter }} </h1>
-    <p>Pronunciation: {{ kana_letter.pronounce }}</p>
-
-    <form method="post" action="{% url 'index' %}">
-        {% csrf_token %}
-        <input type="hidden" name="button_clicked" value="true">
-        <button type="submit">Next letter !</button>
-    </form>
-
-{% else %}
-    <p>No Data was returned from index.</p>
-{% endif %}
+<h1> Select kana to learn </h1>
+<ul>
+    <li><a href="{% url 'hiragana' %}">Hiragana</a></li>
+    <li><a href="{% url 'katakana' %}">Katakana</a></li>
+</ul>
