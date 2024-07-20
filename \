@@ -1,0 +1,13 @@
+[Unit]
+Description=Django One Server
+After=network.target
+
+[Service]
+User=amol
+WorkingDirectory=/home/amol/amol_pc/deployments/django_one/
+#Environment="PATH=/path/to/your/venv/bin"
+ExecStart=/home/amol/amol_pc/deployments/venv/bin/python /home/amol/amol_pc/deployments/django_one/main.py
+
+[Install]
+WantedBy=multi-user.target
+

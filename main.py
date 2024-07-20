@@ -3,7 +3,7 @@ from learning.asgi import application
 
 def main():
     uvicorn.run(app=application,
-                host="127.0.0.1", 
+                host="0.0.0.0", 
                 port=8000, 
                 log_level="info")
 
