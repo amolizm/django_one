@@ -1,15 +1,8 @@
 {% if kana_letter %}
-    <p style="text-align: center;">Letter</p>
+    <p style="text-align: center;">Letter of the day</p>
     <h1 style="text-align: center;"> {{ kana_letter.kanaletter }} </h1>
     <p style="text-align: center;">Pronunciation</p>
     <p style="text-align: center;">{{ kana_letter.pronounce }}</p>
-
-
-    <form method="post" action="{% url 'index' %}" style="text-align: center;">
-        {% csrf_token %}
-        <input type="hidden" name="button_clicked" value="true">
-        <button type="submit">Next letter !</button>
-    </form>
 
 {% else %}
     <p>No Data was returned from index.</p>

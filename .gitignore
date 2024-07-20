@@ -2,4 +2,6 @@ learning/__pycache__/*
 japanese/__pycache__/*
 japanese/migrations/__pycache__/*
 KanaPhonetics/__pycache__/*
+homepage/__pycache__/*
+homepage/migrations/__pycache__/*
 

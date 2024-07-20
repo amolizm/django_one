@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'japanese.apps.JapaneseConfig'
+    'japanese.apps.JapaneseConfig',
+    'homepage.apps.HomepageConfig'
 ]
 
 MIDDLEWARE = [

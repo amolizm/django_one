@@ -29,6 +29,7 @@ def index(request):
 
 def hiragana_index(request):
     context = get_hiragana()
+    context['kana_type'] = 'hiragana'
     if request.method == 'POST':
         form = ButtonClickForm(request.POST)
         if form.is_valid() and form.cleaned_data['button_clicked']:
@@ -39,6 +40,7 @@ def hiragana_index(request):
 
 def katakana_index(request):
     context = get_katakana()
+    context['kana_type'] = 'katakana'
     print("Request", request)
     if request.method == 'POST':
         form = ButtonClickForm(request.POST)
